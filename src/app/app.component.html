@@ -1,8 +1,25 @@
 <div class="outer">
 
   <div class="inner">
-    <div class="output-text"></div>
-    <div class="output-text-modifiers"></div>
+    <div class="output-text">
+      <input id="pass" type="text" [(ngModel)]="pass" />
+      <button id="cclip" (click)="openSnackBar('Copied to clipboard!')" [cdkCopyToClipboard]="pass"><fa-icon
+          [icon]="faCopy"> </fa-icon></button>
+      <button id="generate" (click)="generatePass()">Generate</button>
+    </div>
+    <div class="output-text-modifiers">
+      <div>
+        <mat-slider showTickMarks min="1" max="128" value="16" (input)="inputUpdate($event)">
+          <input name="passlength" type="text" matSliderThumb>
+        </mat-slider>
+        <label for="passlength">{{passlength}}</label>
+      </div>
+      <div>
+        <mat-checkbox [checked]="isSetToNums" (change)="checkNumUpdate()">0-9</mat-checkbox>
+        <mat-checkbox [checked]="isSetToSpecials" (change)="checkSpecialUpdate()">Special Characters</mat-checkbox>
+      </div>
+    </div>
+
   </div>
 
 </div>

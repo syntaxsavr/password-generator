@@ -1,11 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap')
 .outer
     display: flex
     justify-content: center
     background-color: #2a2f2a
     width: 100%
     height: 100%
-    
-
 .inner
     margin-top: 40vh
     background-color: white
@@ -15,8 +14,73 @@
     border-bottom-right-radius: 120px 34px
     box-shadow: 10px 10px 8px -10px black
     width: 50vw
-    height: 15vh 
+    height: fit-content
+    max-height: 50vh
+    min-height: 20vh
     transition: all ease-in-out 0.3s
     &:hover   
         box-shadow: 0px 0px 8px -10px white
         transform: scale(1.005)
+    @media screen and (max-width: 800px)
+        width: 90vw
+        border: 0
+        border-radius: 0
+        
+@keyframes copyPulse
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(1.4)
+  100%
+    transform: scale(1)
+
+.output-text input
+    all: unset
+    font-family: 'Roboto', sans-serif
+    margin: 0
+    font-size: large
+    border: 1px black solid
+    width: 60%
+    height: 1.6em
+    padding: 1px    
+    margin: 7% 3% 0px 5%
+    &:focus
+        outline: none
+    @media screen and (max-width: 800px)
+        display: block
+        width: 60%
+.output-text button
+    margin: 0
+    @media screen and (max-width: 800px)
+        margin-left: 100px
+
+#cclip
+    all: unset
+    margin-right: 5%
+    height: 1.6em
+    padding: 1px
+    width: auto
+    &:focus
+        animation: copyPulse 2s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 normal backwards  
+#generate
+    all: unset
+    font-family: 'Roboto', sans-serif
+    cursor: pointer
+    font-size: larger
+    height: 1.6em
+    padding: 1px
+    &:hover
+        font-weight: bold   
+.output-text-modifiers
+    width: 100%
+    height: fit-content
+    display: flex
+    justify-content: center
+    @media screen and (max-width: 550px)
+        flex-direction: column
+
+mat-slider 
+  width: 200px
+mat-checkbox
+    padding: 1em
+
